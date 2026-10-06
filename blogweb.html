@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Blog</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-primary: #111827;
+            --text-muted: #6b7280;
+            --border-color: #e5e7eb;
+            --accent: #2563eb;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+        }
+
+        .minimal-navbar {
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+
+        .blog-container {
+            max-width: 720px;
+        }
+
+        .post-item {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .post-item:last-child {
+            border-bottom: none;
+        }
+
+        .post-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .post-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .post-title:hover {
+            color: var(--accent);
+        }
+
+        .post-excerpt {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .read-more-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-top: 0.75rem;
+        }
+
+        .read-more-link:hover {
+            color: var(--accent);
+        }
+
+        /* Custom Media Queries for Responsive Spacing and Typography */
+        @media (max-width: 575.98px) {
+            .blog-header {
+                padding: 2rem 0 !important;
+            }
+            .blog-title {
+                font-size: 2rem !important;
+            }
+            .post-item {
+                padding: 1.75rem 0;
+            }
+        }
+
+        @media (min-width: 576px) and (max-width: 991.98px) {
+            .blog-header {
+                padding: 3rem 0 !important;
+            }
+            .blog-title {
+                font-size: 2.5rem !important;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .blog-header {
+                padding: 4rem 0 !important;
+            }
+            .blog-title {
+                font-size: 3rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar minimal-navbar bg-white sticky-top">
+        <div class="container blog-container">
+            <a class="navbar-brand fw-bold fs-5 text-dark m-0" href="#">Chronicles</a>
+            <div class="nav">
+                <a href="#" class="nav-link text-muted px-2">Home</a>
+                <a href="#" class="nav-link text-muted ps-2 pe-0">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container blog-container blog-header">
+        <h1 class="blog-title fw-bold tracking-tight mb-2">Writing on code, design, and minimalism.</h1>
+        <p class="text-muted fs-6 mb-0">A clean, text-focused space for deliberate thoughts and software craftsmanship.</p>
+    </header>
+
+    <main class="container blog-container pb-5">
+        <section class="posts-list">
+            
+            <article class="post-item">
+                <div class="post-date mb-1">October 5, 2026</div>
+                <h2><a href="#" class="post-title fs-4">The Case for Plain Text and Minimal Tools</a></h2>
+                <p class="post-excerpt">Why stripping away complex frameworks, bloated stylesheets, and unnecessary abstractions often leads to more robust and long-lasting digital systems.</p>
+                <a href="#" class="read-more-link">Read article &rarr;</a>
+            </article>
+
+            <article class="post-item">
+                <div class="post-date mb-1">September 28, 2026</div>
+                <h2><a href="#" class="post-title fs-4">Refactoring as a Contemplative Practice</a></h2>
+                <p class="post-excerpt">Looking at code cleanup not as a technical chore, but as an opportunity for deep reflection, clarity, and intentional simplification.</p>
+                <a href="#" class="read-more-link">Read article &rarr;</a>
+            </article>
+
+            <article class="post-item">
+                <div class="post-date mb-1">September 14, 2026</div>
+                <h2><a href="#" class="post-title fs-4">Designing Quiet User Interfaces</a></h2>
+                <p class="post-excerpt">Exploring typography, whitespace, and restraint in modern web design. How to build interfaces that respect the user's attention and time.</p>
+                <a href="#" class="read-more-link">Read article &rarr;</a>
+            </article>
+
+            <article class="post-item">
+                <div class="post-date mb-1">August 30, 2026</div>
+                <h2><a href="#" class="post-title fs-4">On Sustainable Software Architecture</a></h2>
+                <p class="post-excerpt">Building systems that scale gracefully without requiring constant rewrites or overwhelming operational complexity.</p>
+                <a href="#" class="read-more-link">Read article &rarr;</a>
+            </article>
+
+        </section>
+    </main>
+
+    <footer class="container blog-container py-4 border-top border-light text-center text-muted small">
+        <p class="mb-0">&copy; 2026 Chronicles. Published with plain HTML & Bootstrap.</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
