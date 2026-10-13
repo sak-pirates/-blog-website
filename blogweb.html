@@ -3,175 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minimalist Blog</title>
-    <!-- Bootstrap 5 CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Food Blog</title>
     <style>
-        :root {
-            --bg-color: #ffffff;
-            --text-primary: #111827;
-            --text-muted: #6b7280;
-            --border-color: #e5e7eb;
-            --accent: #2563eb;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
+            background-color: white;
+            color: black;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             line-height: 1.6;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        .minimal-navbar {
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 0;
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid cyan;
         }
 
-        .blog-container {
-            max-width: 720px;
+        header h1 {
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: black;
+            margin-bottom: 8px;
         }
 
-        .post-item {
-            padding: 2.5rem 0;
-            border-bottom: 1px solid var(--border-color);
+        header p {
+            font-size: 14px;
+            color: #333;
+            letter-spacing: 1px;
         }
 
-        .post-item:last-child {
-            border-bottom: none;
-        }
-
-        .post-date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            letter-spacing: 0.05em;
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 60px;
+            font-size: 13px;
+            letter-spacing: 1px;
             text-transform: uppercase;
         }
 
-        .post-title {
-            font-weight: 700;
-            color: var(--text-primary);
+        nav a {
+            color: black;
             text-decoration: none;
-            transition: color 0.2s ease;
+            transition: color 0.2s;
         }
 
-        .post-title:hover {
-            color: var(--accent);
+        nav a:hover {
+            color: cyan;
         }
 
-        .post-excerpt {
-            color: var(--text-muted);
-            font-size: 1rem;
-            margin-top: 0.5rem;
+        section {
+            margin-bottom: 60px;
         }
 
-        .read-more-link {
-            font-size: 0.9rem;
+        h2 {
+            font-size: 16px;
             font-weight: 500;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.35rem;
-            margin-top: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: black;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgb(100, 180, 189);
         }
 
-        .read-more-link:hover {
-            color: var(--accent);
+        .placeholder {
+            background-color: #f0ffff;
+            border-left: 2px solid rgb(13, 100, 100);
+            padding: 12px 16px;
+            margin: 12px 0;
+            font-size: 14px;
+            color: #444;
+            font-style: italic;
         }
 
-        /* Custom Media Queries for Responsive Spacing and Typography */
-        @media (max-width: 575.98px) {
-            .blog-header {
-                padding: 2rem 0 !important;
-            }
-            .blog-title {
-                font-size: 2rem !important;
-            }
-            .post-item {
-                padding: 1.75rem 0;
-            }
+        article {
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #eee;
         }
 
-        @media (min-width: 576px) and (max-width: 991.98px) {
-            .blog-header {
-                padding: 3rem 0 !important;
-            }
-            .blog-title {
-                font-size: 2.5rem !important;
-            }
+        article:last-child {
+            border-bottom: none;
         }
 
-        @media (min-width: 992px) {
-            .blog-header {
-                padding: 4rem 0 !important;
-            }
-            .blog-title {
-                font-size: 3rem !important;
-            }
+        .post-title {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: black;
+        }
+
+        .date {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+        }
+
+        ul {
+            list-style: none;
+            margin: 16px 0;
+        }
+
+        ul li {
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        ul li:last-child {
+            border-bottom: none;
+        }
+
+        footer {
+            margin-top: 80px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 255, 255, 0.614);
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        a {
+            color: cyan;
         }
     </style>
 </head>
 <body>
 
-    <nav class="navbar minimal-navbar bg-white sticky-top">
-        <div class="container blog-container">
-            <a class="navbar-brand fw-bold fs-5 text-dark m-0" href="#">Chronicles</a>
-            <div class="nav">
-                <a href="#" class="nav-link text-muted px-2">Home</a>
-                <a href="#" class="nav-link text-muted ps-2 pe-0">About</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="container blog-container blog-header">
-        <h1 class="blog-title fw-bold tracking-tight mb-2">Writing on code, design, and minimalism.</h1>
-        <p class="text-muted fs-6 mb-0">A clean, text-focused space for deliberate thoughts and software craftsmanship.</p>
+    <header>
+        <h1>FOOD</h1>
+        <p>a simple blog</p>
     </header>
 
-    <main class="container blog-container pb-5">
-        <section class="posts-list">
-            
-            <article class="post-item">
-                <div class="post-date mb-1">October 5, 2026</div>
-                <h2><a href="#" class="post-title fs-4">The Case for Plain Text and Minimal Tools</a></h2>
-                <p class="post-excerpt">Why stripping away complex frameworks, bloated stylesheets, and unnecessary abstractions often leads to more robust and long-lasting digital systems.</p>
-                <a href="#" class="read-more-link">Read article &rarr;</a>
-            </article>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#posts">Posts</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-            <article class="post-item">
-                <div class="post-date mb-1">September 28, 2026</div>
-                <h2><a href="#" class="post-title fs-4">Refactoring as a Contemplative Practice</a></h2>
-                <p class="post-excerpt">Looking at code cleanup not as a technical chore, but as an opportunity for deep reflection, clarity, and intentional simplification.</p>
-                <a href="#" class="read-more-link">Read article &rarr;</a>
-            </article>
+    <!-- HOME -->
+    <section id="home">
+        <h2>Welcome</h2>
+        <div class="placeholder">
+            this is a simple food blog where I share my favorite recipes, food experiences, and culinary adventures.!
+        </div>
+        <div class="placeholder">
+            I hope you enjoy reading and find inspiration for your own cooking
+        </div>
+    </section>
 
-            <article class="post-item">
-                <div class="post-date mb-1">September 14, 2026</div>
-                <h2><a href="#" class="post-title fs-4">Designing Quiet User Interfaces</a></h2>
-                <p class="post-excerpt">Exploring typography, whitespace, and restraint in modern web design. How to build interfaces that respect the user's attention and time.</p>
-                <a href="#" class="read-more-link">Read article &rarr;</a>
-            </article>
+    <!-- ABOUT -->
+    <section id="about">
+        <h2>About</h2>
+        <div class="placeholder">
+            minimalist food blog using html
+        </div>
+        <ul>
+            <li class="placeholder">pizza</li>
+            <li class="placeholder">pasta</li>
+            <li class="placeholder">salad</li>
+        </ul>
+    </section>
 
-            <article class="post-item">
-                <div class="post-date mb-1">August 30, 2026</div>
-                <h2><a href="#" class="post-title fs-4">On Sustainable Software Architecture</a></h2>
-                <p class="post-excerpt">Building systems that scale gracefully without requiring constant rewrites or overwhelming operational complexity.</p>
-                <a href="#" class="read-more-link">Read article &rarr;</a>
-            </article>
+    <!-- POSTS -->
+    <section id="posts">
+        <h2>Posts</h2>
 
-        </section>
-    </main>
+        <article>
+            <p class="post-title">pizza</p>
+            <p class="date">2026</p>
+            <div class="placeholder">
+                easy homemade pizza recipe with a crispy crust and delicious toppings. 
+            </div>
+            <div class="placeholder">
+                dough , sauce , cheese and topping 
+            </div>
+        </article>
 
-    <footer class="container blog-container py-4 border-top border-light text-center text-muted small">
-        <p class="mb-0">&copy; 2026 Chronicles. Published with plain HTML & Bootstrap.</p>
+        <article>
+            <p class="post-title">pasta</p>
+            <p class="date">2026</p>
+            <div class="placeholder">
+                easy homemade pasta recipe 
+            </div>
+        </article>
+
+        <article>
+            <p class="post-title">salad</p>
+            <p class="date">2026</p>
+            <div class="placeholder">
+                easy homemade salad recipe 
+            </div>
+        </article>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="placeholder">
+            Email: <a href="mailto: singhsaksham@gmail.com">singhsaksham@gmail.com</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Food Blog</p>
+        <p>Made with HTML</p>
     </footer>
 
-    <!-- Bootstrap 5 JS Bundle CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
